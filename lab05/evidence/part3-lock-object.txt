@@ -1,0 +1,13 @@
+== s3 ls during lock
+2026-11-05 01:44:20      40274 terraform.tfstate
+2026-11-05 01:48:38        250 terraform.tfstate.tflock
+== tflock object
+{
+  "ID": "9276bc94-8a60-2db1-e6fd-089e232a8590",
+  "Operation": "OperationTypeApply",
+  "Info": "",
+  "Who": "ubuntu@ubuntu-VMware-Virtual-Platform",
+  "Version": "1.16.3",
+  "Created": "2026-11-04T18:48:36.141940664Z",
+  "Path": "ipa-tfstate-58b11137/lab05/terraform.tfstate"
+}

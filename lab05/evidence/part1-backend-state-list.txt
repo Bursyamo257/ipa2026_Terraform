@@ -1,0 +1,3 @@
+aws_s3_bucket_public_access_block.state
+aws_s3_bucket_server_side_encryption_configuration.state
+aws_s3_bucket_versioning.state

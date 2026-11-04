@@ -1,0 +1,1 @@
+-rw-rw-r-- 1 ubuntu ubuntu 39694 Nov  5 01:41 terraform.tfstate

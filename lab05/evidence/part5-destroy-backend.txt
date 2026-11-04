@@ -1,0 +1,11 @@
+aws_s3_bucket_server_side_encryption_configuration.state: Refreshing state... [id=ipa-tfstate-58b11137]
+aws_s3_bucket_public_access_block.state: Refreshing state... [id=ipa-tfstate-58b11137]
+aws_s3_bucket_versioning.state: Refreshing state... [id=ipa-tfstate-58b11137]
+
+Changes to Outputs:
+  - bucket_name = "ipa-tfstate-58b11137" -> null
+
+You can apply this plan to save these new output values to the Terraform
+state, without changing any real infrastructure.
+
+Destroy complete! Resources: 0 destroyed.

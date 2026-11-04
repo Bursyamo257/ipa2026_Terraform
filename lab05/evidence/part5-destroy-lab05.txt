@@ -1,0 +1,706 @@
+Acquiring state lock. This may take a few moments...
+data.aws_vpc.default: Reading...
+module.web_server.data.aws_ami.amazon_linux: Reading...
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-01e6bd856088af0b7]
+module.web_server.data.aws_ami.amazon_linux: Read complete after 3s [id=ami-07c1b6f58fb89ce9f]
+data.aws_vpc.default: Read complete after 5s [id=vpc-0a4114f0611a7e883]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-014d4d4e3752031d3]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-0cdb1e0b2784f11e7]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-0e74481502a3d57dd]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-0be892a7a06f12d59]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0698b4985e8c51df8]
+module.web_server.aws_security_group.web: Refreshing state... [id=sg-06af39774e13b0efe]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-0b06add16b990f213]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-036655b2e819860fa]
+module.web_server.aws_instance.server["web"]: Refreshing state... [id=i-06592e47d9f2637ea]
+module.web_server.aws_instance.server["api"]: Refreshing state... [id=i-03ab7f447dd7746cd]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-034856c27680cca3c]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-082df395af0dc29fa]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-0be892a7a06f12d591080289494]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # module.vpc.aws_default_network_acl.this[0] will be destroyed
+  - resource "aws_default_network_acl" "this" {
+      - arn                    = "arn:aws:ec2:us-east-1:808536359076:network-acl/acl-0cdb1e0b2784f11e7" -> null
+      - default_network_acl_id = "acl-0cdb1e0b2784f11e7" -> null
+      - id                     = "acl-0cdb1e0b2784f11e7" -> null
+      - owner_id               = "808536359076" -> null
+      - subnet_ids             = [
+          - "subnet-0698b4985e8c51df8",
+          - "subnet-0b06add16b990f213",
+        ] -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-default"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all               = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-default"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - vpc_id                 = "vpc-01e6bd856088af0b7" -> null
+
+      - egress {
+          - action          = "allow" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - ipv6_cidr_block = "::/0" -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 101 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+      - egress {
+          - action          = "allow" -> null
+          - cidr_block      = "0.0.0.0/0" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 100 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - ingress {
+          - action          = "allow" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - ipv6_cidr_block = "::/0" -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 101 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+      - ingress {
+          - action          = "allow" -> null
+          - cidr_block      = "0.0.0.0/0" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 100 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.vpc.aws_default_route_table.default[0] will be destroyed
+  - resource "aws_default_route_table" "default" {
+      - arn                    = "arn:aws:ec2:us-east-1:808536359076:route-table/rtb-014d4d4e3752031d3" -> null
+      - default_route_table_id = "rtb-014d4d4e3752031d3" -> null
+      - id                     = "rtb-014d4d4e3752031d3" -> null
+      - owner_id               = "808536359076" -> null
+      - propagating_vgws       = [] -> null
+      - route                  = [] -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-default"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all               = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-default"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - vpc_id                 = "vpc-01e6bd856088af0b7" -> null
+
+      - timeouts {
+          - create = "5m" -> null
+          - update = "5m" -> null
+        }
+    }
+
+  # module.vpc.aws_default_security_group.this[0] will be destroyed
+  - resource "aws_default_security_group" "this" {
+      - arn                    = "arn:aws:ec2:us-east-1:808536359076:security-group/sg-0e74481502a3d57dd" -> null
+      - description            = "default VPC security group" -> null
+      - egress                 = [] -> null
+      - id                     = "sg-0e74481502a3d57dd" -> null
+      - ingress                = [] -> null
+      - name                   = "default" -> null
+      - owner_id               = "808536359076" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-default"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all               = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-default"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - vpc_id                 = "vpc-01e6bd856088af0b7" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_internet_gateway.this[0] will be destroyed
+  - resource "aws_internet_gateway" "this" {
+      - arn      = "arn:aws:ec2:us-east-1:808536359076:internet-gateway/igw-036655b2e819860fa" -> null
+      - id       = "igw-036655b2e819860fa" -> null
+      - owner_id = "808536359076" -> null
+      - tags     = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - vpc_id   = "vpc-01e6bd856088af0b7" -> null
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be destroyed
+  - resource "aws_route" "public_internet_gateway" {
+      - destination_cidr_block      = "0.0.0.0/0" -> null
+      - gateway_id                  = "igw-036655b2e819860fa" -> null
+      - id                          = "r-rtb-0be892a7a06f12d591080289494" -> null
+      - origin                      = "CreateRoute" -> null
+      - route_table_id              = "rtb-0be892a7a06f12d59" -> null
+      - state                       = "active" -> null
+        # (13 unchanged attributes hidden)
+
+      - timeouts {
+          - create = "5m" -> null
+        }
+    }
+
+  # module.vpc.aws_route_table.public[0] will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:us-east-1:808536359076:route-table/rtb-0be892a7a06f12d59" -> null
+      - id               = "rtb-0be892a7a06f12d59" -> null
+      - owner_id         = "808536359076" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - gateway_id                 = "igw-036655b2e819860fa"
+                # (11 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-public"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all         = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-public"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - vpc_id           = "vpc-01e6bd856088af0b7" -> null
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-034856c27680cca3c" -> null
+      - route_table_id = "rtb-0be892a7a06f12d59" -> null
+      - subnet_id      = "subnet-0b06add16b990f213" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_route_table_association.public[1] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-082df395af0dc29fa" -> null
+      - route_table_id = "rtb-0be892a7a06f12d59" -> null
+      - subnet_id      = "subnet-0698b4985e8c51df8" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:us-east-1:808536359076:subnet/subnet-0b06add16b990f213" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1a" -> null
+      - availability_zone_id                           = "use1-az1" -> null
+      - cidr_block                                     = "10.0.1.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0b06add16b990f213" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "808536359076" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-public-us-east-1a"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all                                       = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-public-us-east-1a"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - vpc_id                                         = "vpc-01e6bd856088af0b7" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_subnet.public[1] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:us-east-1:808536359076:subnet/subnet-0698b4985e8c51df8" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1b" -> null
+      - availability_zone_id                           = "use1-az2" -> null
+      - cidr_block                                     = "10.0.2.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0698b4985e8c51df8" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "808536359076" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-public-us-east-1b"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all                                       = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc-public-us-east-1b"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - vpc_id                                         = "vpc-01e6bd856088af0b7" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_vpc.this[0] will be destroyed
+  - resource "aws_vpc" "this" {
+      - arn                                  = "arn:aws:ec2:us-east-1:808536359076:vpc/vpc-01e6bd856088af0b7" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.0.0.0/16" -> null
+      - default_network_acl_id               = "acl-0cdb1e0b2784f11e7" -> null
+      - default_route_table_id               = "rtb-014d4d4e3752031d3" -> null
+      - default_security_group_id            = "sg-0e74481502a3d57dd" -> null
+      - dhcp_options_id                      = "dopt-0c9d8c281eb51b6fc" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-01e6bd856088af0b7" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-014d4d4e3752031d3" -> null
+      - owner_id                             = "808536359076" -> null
+      - tags                                 = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all                             = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-vpc"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.web_server.aws_instance.server["api"] will be destroyed
+  - resource "aws_instance" "server" {
+      - ami                                  = "ami-07c1b6f58fb89ce9f" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:808536359076:instance/i-03ab7f447dd7746cd" -> null
+      - associate_public_ip_address          = true -> null
+      - availability_zone                    = "us-east-1a" -> null
+      - cpu_core_count                       = 1 -> null
+      - cpu_threads_per_core                 = 2 -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - id                                   = "i-03ab7f447dd7746cd" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t3.micro" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-0d99a3e3050a3c8d0" -> null
+      - private_dns                          = "ip-10-0-1-220.ec2.internal" -> null
+      - private_ip                           = "10.0.1.220" -> null
+      - public_dns                           = "ec2-44-214-6-210.compute-1.amazonaws.com" -> null
+      - public_ip                            = "44.214.6.210" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-0b06add16b990f213" -> null
+      - tags                                 = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-api"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+          - "Role"        = "backend"
+        } -> null
+      - tags_all                             = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-api"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+          - "Role"        = "backend"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data                            = "97800aa830c8413678855f06ffa1b1f29b50367b" -> null
+      - user_data_replace_on_change          = false -> null
+      - vpc_security_group_ids               = [
+          - "sg-06af39774e13b0efe",
+        ] -> null
+        # (8 unchanged attributes hidden)
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count       = 1 -> null
+          - threads_per_core = 2 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "unlimited" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = true -> null
+          - iops                  = 3000 -> null
+          - kms_key_id            = "arn:aws:kms:us-east-1:808536359076:key/868a8da4-69e5-456b-b54a-e3493c2d5156" -> null
+          - tags                  = {} -> null
+          - tags_all              = {
+              - "Course"    = "IPA-Terraform"
+              - "ManagedBy" = "Terraform"
+            } -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-0c70a8a913f889bb1" -> null
+          - volume_size           = 8 -> null
+          - volume_type           = "gp3" -> null
+        }
+    }
+
+  # module.web_server.aws_instance.server["web"] will be destroyed
+  - resource "aws_instance" "server" {
+      - ami                                  = "ami-07c1b6f58fb89ce9f" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:808536359076:instance/i-06592e47d9f2637ea" -> null
+      - associate_public_ip_address          = true -> null
+      - availability_zone                    = "us-east-1a" -> null
+      - cpu_core_count                       = 1 -> null
+      - cpu_threads_per_core                 = 2 -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - id                                   = "i-06592e47d9f2637ea" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t3.micro" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-09f4e87160395cd8f" -> null
+      - private_dns                          = "ip-10-0-1-162.ec2.internal" -> null
+      - private_ip                           = "10.0.1.162" -> null
+      - public_dns                           = "ec2-98-82-27-160.compute-1.amazonaws.com" -> null
+      - public_ip                            = "98.82.27.160" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-0b06add16b990f213" -> null
+      - tags                                 = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-web"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+          - "Role"        = "frontend"
+        } -> null
+      - tags_all                             = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-web"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+          - "Role"        = "frontend"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data                            = "97800aa830c8413678855f06ffa1b1f29b50367b" -> null
+      - user_data_replace_on_change          = false -> null
+      - vpc_security_group_ids               = [
+          - "sg-06af39774e13b0efe",
+        ] -> null
+        # (8 unchanged attributes hidden)
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count       = 1 -> null
+          - threads_per_core = 2 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "unlimited" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = true -> null
+          - iops                  = 3000 -> null
+          - kms_key_id            = "arn:aws:kms:us-east-1:808536359076:key/868a8da4-69e5-456b-b54a-e3493c2d5156" -> null
+          - tags                  = {} -> null
+          - tags_all              = {
+              - "Course"    = "IPA-Terraform"
+              - "ManagedBy" = "Terraform"
+            } -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-0cad1321272e4ffbd" -> null
+          - volume_size           = 8 -> null
+          - volume_type           = "gp3" -> null
+        }
+    }
+
+  # module.web_server.aws_security_group.web will be destroyed
+  - resource "aws_security_group" "web" {
+      - arn                    = "arn:aws:ec2:us-east-1:808536359076:security-group/sg-06af39774e13b0efe" -> null
+      - description            = "Dynamically generated ingress rules" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ] -> null
+      - id                     = "sg-06af39774e13b0efe" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "Application port added by the caller"
+              - from_port        = 8080
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 8080
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "HTTP"
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 80
+            },
+          - {
+              - cidr_blocks      = [
+                  - "10.0.0.0/8",
+                ]
+              - description      = "SSH from the office network"
+              - from_port        = 22
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 22
+            },
+        ] -> null
+      - name                   = "ipa-lab05-dev-web-sg" -> null
+      - owner_id               = "808536359076" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-web-sg"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - tags_all               = {
+          - "Course"      = "IPA-Terraform"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "ipa-lab05-dev-web-sg"
+          - "Owner"       = "IPA-Student-Lab4b"
+          - "Project"     = "ipa-lab05"
+        } -> null
+      - vpc_id                 = "vpc-01e6bd856088af0b7" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+Plan: 0 to add, 0 to change, 14 to destroy.
+
+Changes to Outputs:
+  - admin_password   = (sensitive value) -> null
+  - all_private_ips  = [
+      - "10.0.1.220",
+      - "10.0.1.162",
+    ] -> null
+  - frontend_servers = [
+      - "web",
+    ] -> null
+  - server_summary   = {
+      - api = "ec2-44-214-6-210.compute-1.amazonaws.com"
+      - web = "ec2-98-82-27-160.compute-1.amazonaws.com"
+    } -> null
+module.vpc.aws_route_table_association.public[0]: Destroying... [id=rtbassoc-034856c27680cca3c]
+module.web_server.aws_instance.server["api"]: Destroying... [id=i-03ab7f447dd7746cd]
+module.vpc.aws_default_route_table.default[0]: Destroying... [id=rtb-014d4d4e3752031d3]
+module.vpc.aws_default_security_group.this[0]: Destroying... [id=sg-0e74481502a3d57dd]
+module.vpc.aws_default_network_acl.this[0]: Destroying... [id=acl-0cdb1e0b2784f11e7]
+module.web_server.aws_instance.server["web"]: Destroying... [id=i-06592e47d9f2637ea]
+module.vpc.aws_route.public_internet_gateway[0]: Destroying... [id=r-rtb-0be892a7a06f12d591080289494]
+module.vpc.aws_route_table_association.public[1]: Destroying... [id=rtbassoc-082df395af0dc29fa]
+module.vpc.aws_default_security_group.this[0]: Destruction complete after 0s
+module.vpc.aws_default_route_table.default[0]: Destruction complete after 0s
+module.vpc.aws_default_network_acl.this[0]: Destruction complete after 0s
+module.vpc.aws_route_table_association.public[0]: Destruction complete after 3s
+module.vpc.aws_route_table_association.public[1]: Destruction complete after 4s
+module.vpc.aws_route.public_internet_gateway[0]: Destruction complete after 5s
+module.vpc.aws_internet_gateway.this[0]: Destroying... [id=igw-036655b2e819860fa]
+module.vpc.aws_route_table.public[0]: Destroying... [id=rtb-0be892a7a06f12d59]
+module.vpc.aws_route_table.public[0]: Destruction complete after 3s
+module.web_server.aws_instance.server["web"]: Still destroying... [id=i-06592e47d9f2637ea, 00m10s elapsed]
+module.web_server.aws_instance.server["api"]: Still destroying... [id=i-03ab7f447dd7746cd, 00m10s elapsed]
+module.vpc.aws_internet_gateway.this[0]: Still destroying... [id=igw-036655b2e819860fa, 00m10s elapsed]
+module.web_server.aws_instance.server["web"]: Still destroying... [id=i-06592e47d9f2637ea, 00m20s elapsed]
+module.web_server.aws_instance.server["api"]: Still destroying... [id=i-03ab7f447dd7746cd, 00m20s elapsed]
+module.vpc.aws_internet_gateway.this[0]: Still destroying... [id=igw-036655b2e819860fa, 00m20s elapsed]
+module.web_server.aws_instance.server["web"]: Destruction complete after 27s
+module.vpc.aws_internet_gateway.this[0]: Destruction complete after 24s
+module.web_server.aws_instance.server["api"]: Still destroying... [id=i-03ab7f447dd7746cd, 00m30s elapsed]
+module.web_server.aws_instance.server["api"]: Destruction complete after 38s
+module.vpc.aws_subnet.public[0]: Destroying... [id=subnet-0b06add16b990f213]
+module.web_server.aws_security_group.web: Destroying... [id=sg-06af39774e13b0efe]
+module.vpc.aws_subnet.public[1]: Destroying... [id=subnet-0698b4985e8c51df8]
+module.vpc.aws_subnet.public[0]: Destruction complete after 2s
+module.vpc.aws_subnet.public[1]: Destruction complete after 3s
+module.web_server.aws_security_group.web: Destruction complete after 4s
+module.vpc.aws_vpc.this[0]: Destroying... [id=vpc-01e6bd856088af0b7]
+module.vpc.aws_vpc.this[0]: Destruction complete after 2s
+Releasing state lock. This may take a few moments...
+
+Destroy complete! Resources: 14 destroyed.

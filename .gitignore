@@ -7,6 +7,7 @@ tfplan*
 *.tfvars
 *.auto.tfvars
 crash.log
+*.log
 
 # AWS CLI installer / credentials
 aws/
@@ -17,5 +18,3 @@ credentials
 # Course handouts
 *.docx
 
-# Not part of this upload
-lab05/

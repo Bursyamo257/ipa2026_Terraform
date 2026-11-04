@@ -1,0 +1,23 @@
+Acquiring state lock. This may take a few moments...
+
+Error: Error acquiring the state lock
+
+Error message: operation error S3: PutObject, https response error
+StatusCode: 412, RequestID: SSK7AQGACQQZ5Y55, HostID:
+ymBG3siESq0+Xi3rUm4Ot7n+hqXrQg33vrVy/u17SBMk8hZHp13l4b8N8WHKQ1aodYWmd+vWlQQ=,
+api error PreconditionFailed: At least one of the pre-conditions you
+specified did not hold
+Lock Info:
+  ID:        9276bc94-8a60-2db1-e6fd-089e232a8590
+  Path:      ipa-tfstate-58b11137/lab05/terraform.tfstate
+  Operation: OperationTypeApply
+  Who:       ubuntu@ubuntu-VMware-Virtual-Platform
+  Version:   1.16.3
+  Created:   2026-11-04 18:48:36.141940664 +0000 UTC
+  Info:      
+
+
+Terraform acquires a state lock to protect the state from being written
+by multiple users at the same time. Please resolve the issue above and try
+again. For most commands, you can disable locking with the "-lock=false"
+flag, but this is not recommended.

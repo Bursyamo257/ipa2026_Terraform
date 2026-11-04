@@ -1,0 +1,11 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
+*.auto.tfvars
+custom.tfvars
+graph.dot
+graph.svg
+graph-plan.svg
+cycle.svg

@@ -1,0 +1,4 @@
+module.web.data.aws_ami.amazon_linux
+module.web.aws_instance.server["api"]
+module.web.aws_instance.server["web"]
+module.web.aws_security_group.web

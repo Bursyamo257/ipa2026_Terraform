@@ -1,0 +1,4 @@
+state list | grep adopted:
+(gone)
+aws list-tables | grep ipa-adopted:
+TABLENAMES	ipa-adopted-18974

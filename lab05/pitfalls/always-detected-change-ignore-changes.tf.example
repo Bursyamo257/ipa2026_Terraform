@@ -1,0 +1,14 @@
+# Pitfall B - fix 1: ignore the tag on the instances (modules/web-server/main.tf)
+# Only silences the 2 instances; the VPC module resources and SG still diff every plan.
+resource "aws_instance" "server" {
+  # ... unchanged arguments ...
+
+  tags = merge(var.tags, {
+    Name = "${var.name_prefix}-${each.key}"
+    Role = each.value.role
+  })
+
+  lifecycle {
+    ignore_changes = [tags["LastPlanned"]]
+  }
+}
