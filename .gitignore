@@ -1,0 +1,21 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan*
+*.tfvars
+*.auto.tfvars
+crash.log
+
+# AWS CLI installer / credentials
+aws/
+awscliv2.zip
+.aws/
+credentials
+
+# Course handouts
+*.docx
+
+# Not part of this upload
+lab05/

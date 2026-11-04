@@ -1,0 +1,10 @@
+== plan
+
+real	0m19.521s
+user	0m1.876s
+sys	0m1.553s
+== plan -refresh=false
+
+real	0m8.091s
+user	0m1.900s
+sys	0m1.201s

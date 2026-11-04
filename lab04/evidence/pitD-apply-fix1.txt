@@ -1,0 +1,91 @@
+module.web_server.data.aws_ami.amazon_linux: Reading...
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0285259d22388ae68]
+data.aws_vpc.default: Reading...
+module.web_server.data.aws_ami.amazon_linux: Read complete after 3s [id=ami-07c1b6f58fb89ce9f]
+data.aws_vpc.default: Read complete after 5s [id=vpc-0a4114f0611a7e883]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-095fd87711186ff57]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-05825d5d3068dc76e]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-0040fce23aa04842e]
+module.web_server.aws_security_group.web: Refreshing state... [id=sg-013dace3ae92a75d4]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0a58afa60b04dced3]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-044cf52ae85cea910]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-04c47752a0e8c06c8]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0cdc2758f47a4d17a]
+module.web_server.aws_instance.server["api"]: Refreshing state... [id=i-0ebaeaa32e651317b]
+module.web_server.aws_instance.server["web"]: Refreshing state... [id=i-03c91a5fb3578d04c]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-06cdbd24c96f9197d]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0726da9f1cb6b9b8e]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-04c47752a0e8c06c81080289494]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_dynamodb_table.demo will be created
+  + resource "aws_dynamodb_table" "demo" {
+      + arn              = (known after apply)
+      + billing_mode     = "PAY_PER_REQUEST"
+      + hash_key         = "id"
+      + id               = (known after apply)
+      + name             = "ipa-lab04-dev-demo"
+      + read_capacity    = (known after apply)
+      + stream_arn       = (known after apply)
+      + stream_label     = (known after apply)
+      + stream_view_type = (known after apply)
+      + tags_all         = {
+          + "Course"    = "IPA-Terraform"
+          + "ManagedBy" = "Terraform"
+        }
+      + write_capacity   = (known after apply)
+
+      + attribute {
+          + name = "id"
+          + type = "S"
+        }
+
+      + point_in_time_recovery (known after apply)
+
+      + server_side_encryption (known after apply)
+
+      + ttl (known after apply)
+    }
+
+  # aws_dynamodb_table_item.seed will be created
+  + resource "aws_dynamodb_table_item" "seed" {
+      + hash_key   = "id"
+      + id         = (known after apply)
+      + item       = jsonencode(
+            {
+              + id = {
+                  + S = "seed"
+                }
+            }
+        )
+      + table_name = "ipa-lab04-dev-demo"
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+aws_dynamodb_table.demo: Creating...
+aws_dynamodb_table.demo: Still creating... [00m10s elapsed]
+aws_dynamodb_table.demo: Creation complete after 15s [id=ipa-lab04-dev-demo]
+aws_dynamodb_table_item.seed: Creating...
+aws_dynamodb_table_item.seed: Creation complete after 1s [id=ipa-lab04-dev-demo|id|seed]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+admin_password = <sensitive>
+all_private_ips = [
+  "10.0.1.16",
+  "10.0.1.114",
+]
+frontend_servers = [
+  "web",
+]
+server_summary = {
+  "api" = "ec2-100-61-180-72.compute-1.amazonaws.com"
+  "web" = "ec2-3-239-230-55.compute-1.amazonaws.com"
+}

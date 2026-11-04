@@ -1,0 +1,12 @@
+admin_password = <sensitive>
+all_private_ips = [
+  "10.0.1.16",
+  "10.0.1.114",
+]
+frontend_servers = [
+  "web",
+]
+server_summary = {
+  "api" = "ec2-100-61-180-72.compute-1.amazonaws.com"
+  "web" = "ec2-3-239-230-55.compute-1.amazonaws.com"
+}

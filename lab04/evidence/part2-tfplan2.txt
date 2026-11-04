@@ -1,0 +1,23 @@
+data.aws_vpc.default: Reading...
+module.web_server.data.aws_ami.amazon_linux: Reading...
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0285259d22388ae68]
+module.web_server.data.aws_ami.amazon_linux: Read complete after 3s [id=ami-07c1b6f58fb89ce9f]
+data.aws_vpc.default: Read complete after 5s [id=vpc-0a4114f0611a7e883]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-0040fce23aa04842e]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0a58afa60b04dced3]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-044cf52ae85cea910]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-05825d5d3068dc76e]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0cdc2758f47a4d17a]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-095fd87711186ff57]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-04c47752a0e8c06c8]
+module.web_server.aws_security_group.web: Refreshing state... [id=sg-013dace3ae92a75d4]
+module.web_server.aws_instance.server["api"]: Refreshing state... [id=i-0ebaeaa32e651317b]
+module.web_server.aws_instance.server["web"]: Refreshing state... [id=i-0342c76a184f75c86]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0726da9f1cb6b9b8e]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-06cdbd24c96f9197d]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-04c47752a0e8c06c81080289494]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.

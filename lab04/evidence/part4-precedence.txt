@@ -1,0 +1,10 @@
+1 default:
+"from-default"
+2 env:
+"from-env-var"
+3 tfvars (+env set):
+"from-tfvars-file"
+4 -var-file:
+"from-custom-file"
+5 -var (+all others):
+"from-cli"

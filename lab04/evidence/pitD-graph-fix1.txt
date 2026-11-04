@@ -1,0 +1,1 @@
+  "aws_dynamodb_table_item.seed" -> "aws_dynamodb_table.demo";

@@ -1,0 +1,16 @@
+data.aws_vpc.default
+module.vpc.aws_default_network_acl.this[0]
+module.vpc.aws_default_route_table.default[0]
+module.vpc.aws_default_security_group.this[0]
+module.vpc.aws_internet_gateway.this[0]
+module.vpc.aws_route.public_internet_gateway[0]
+module.vpc.aws_route_table.public[0]
+module.vpc.aws_route_table_association.public[0]
+module.vpc.aws_route_table_association.public[1]
+module.vpc.aws_subnet.public[0]
+module.vpc.aws_subnet.public[1]
+module.vpc.aws_vpc.this[0]
+module.web_server.data.aws_ami.amazon_linux
+module.web_server.aws_instance.server["api"]
+module.web_server.aws_instance.server["web"]
+module.web_server.aws_security_group.web

@@ -1,0 +1,157 @@
+data.aws_vpc.default: Reading...
+module.web_server.data.aws_ami.amazon_linux: Reading...
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0285259d22388ae68]
+module.web_server.data.aws_ami.amazon_linux: Read complete after 3s [id=ami-07c1b6f58fb89ce9f]
+data.aws_vpc.default: Read complete after 5s [id=vpc-0a4114f0611a7e883]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-095fd87711186ff57]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-044cf52ae85cea910]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-0040fce23aa04842e]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-05825d5d3068dc76e]
+module.web_server.aws_security_group.web: Refreshing state... [id=sg-013dace3ae92a75d4]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0a58afa60b04dced3]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-04c47752a0e8c06c8]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0cdc2758f47a4d17a]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0726da9f1cb6b9b8e]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-06cdbd24c96f9197d]
+module.web_server.aws_instance.server["web"]: Refreshing state... [id=i-0342c76a184f75c86]
+module.web_server.aws_instance.server["api"]: Refreshing state... [id=i-0ebaeaa32e651317b]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-04c47752a0e8c06c81080289494]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # module.web_server.aws_instance.server["web"] will be replaced, as requested
+-/+ resource "aws_instance" "server" {
+      ~ arn                                  = "arn:aws:ec2:us-east-1:808536359076:instance/i-0342c76a184f75c86" -> (known after apply)
+      ~ availability_zone                    = "us-east-1a" -> (known after apply)
+      ~ cpu_core_count                       = 1 -> (known after apply)
+      ~ cpu_threads_per_core                 = 2 -> (known after apply)
+      ~ disable_api_stop                     = false -> (known after apply)
+      ~ disable_api_termination              = false -> (known after apply)
+      ~ ebs_optimized                        = false -> (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      - hibernation                          = false -> null
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      ~ id                                   = "i-0342c76a184f75c86" -> (known after apply)
+      ~ instance_initiated_shutdown_behavior = "stop" -> (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      ~ instance_state                       = "running" -> (known after apply)
+      ~ ipv6_address_count                   = 0 -> (known after apply)
+      ~ ipv6_addresses                       = [] -> (known after apply)
+      + key_name                             = (known after apply)
+      ~ monitoring                           = false -> (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      ~ placement_partition_number           = 0 -> (known after apply)
+      ~ primary_network_interface_id         = "eni-0701bef9c7aed03c0" -> (known after apply)
+      ~ private_dns                          = "ip-10-0-1-223.ec2.internal" -> (known after apply)
+      ~ private_ip                           = "10.0.1.223" -> (known after apply)
+      ~ public_dns                           = "ec2-34-205-81-107.compute-1.amazonaws.com" -> (known after apply)
+      ~ public_ip                            = "34.205.81.107" -> (known after apply)
+      ~ secondary_private_ips                = [] -> (known after apply)
+      ~ security_groups                      = [] -> (known after apply)
+      + spot_instance_request_id             = (known after apply)
+      ~ tags                                 = {
+            "Environment"  = "dev"
+            "ManagedBy"    = "Terraform"
+          - "ManualChange" = "true" -> null
+            "Name"         = "ipa-lab04-dev-web"
+            "Owner"        = "IPA-Student-Lab4"
+            "Project"      = "ipa-lab04"
+            "Role"         = "frontend"
+        }
+      ~ tags_all                             = {
+          - "ManualChange" = "true" -> null
+            # (7 unchanged elements hidden)
+        }
+      ~ tenancy                              = "default" -> (known after apply)
+      + user_data_base64                     = (known after apply)
+        # (9 unchanged attributes hidden)
+
+      ~ capacity_reservation_specification (known after apply)
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      ~ cpu_options (known after apply)
+      - cpu_options {
+          - core_count       = 1 -> null
+          - threads_per_core = 2 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "unlimited" -> null
+        }
+
+      ~ ebs_block_device (known after apply)
+
+      ~ enclave_options (known after apply)
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      ~ ephemeral_block_device (known after apply)
+
+      ~ instance_market_options (known after apply)
+
+      ~ maintenance_options (known after apply)
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      ~ metadata_options (known after apply)
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      ~ network_interface (known after apply)
+
+      ~ private_dns_name_options (known after apply)
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      ~ root_block_device {
+          ~ device_name           = "/dev/xvda" -> (known after apply)
+          ~ iops                  = 3000 -> (known after apply)
+          ~ kms_key_id            = "arn:aws:kms:us-east-1:808536359076:key/868a8da4-69e5-456b-b54a-e3493c2d5156" -> (known after apply)
+          - tags                  = {} -> null
+          ~ tags_all              = {
+              - "Course"    = "IPA-Terraform"
+              - "ManagedBy" = "Terraform"
+            } -> (known after apply)
+          ~ throughput            = 125 -> (known after apply)
+          ~ volume_id             = "vol-06a74ec0e750e65e3" -> (known after apply)
+            # (4 unchanged attributes hidden)
+        }
+    }
+
+Plan: 1 to add, 0 to change, 1 to destroy.
+
+Changes to Outputs:
+  ~ all_private_ips  = [
+        "10.0.1.16",
+      ~ "10.0.1.223" -> (known after apply),
+    ]
+  ~ server_summary   = {
+      ~ web = "ec2-34-205-81-107.compute-1.amazonaws.com" -> (known after apply)
+        # (1 unchanged attribute hidden)
+    }
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

@@ -1,0 +1,9 @@
+  subgraph "cluster_module.web_server" {
+    label = "module.web_server"
+    "module.web_server.data.aws_ami.amazon_linux" [label="data.aws_ami.amazon_linux"];
+    "module.web_server.aws_instance.server" [label="aws_instance.server"];
+    "module.web_server.aws_security_group.web" [label="aws_security_group.web"];
+  "module.web_server.aws_instance.server" -> "module.vpc.aws_subnet.public";
+  "module.web_server.aws_instance.server" -> "module.web_server.data.aws_ami.amazon_linux";
+  "module.web_server.aws_instance.server" -> "module.web_server.aws_security_group.web";
+  "module.web_server.aws_security_group.web" -> "module.vpc.aws_vpc.this";

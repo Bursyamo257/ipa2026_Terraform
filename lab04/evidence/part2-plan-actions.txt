@@ -1,0 +1,14 @@
+{"address":"module.vpc.aws_default_network_acl.this[0]","actions":["create"]}
+{"address":"module.vpc.aws_default_route_table.default[0]","actions":["create"]}
+{"address":"module.vpc.aws_default_security_group.this[0]","actions":["create"]}
+{"address":"module.vpc.aws_internet_gateway.this[0]","actions":["create"]}
+{"address":"module.vpc.aws_route.public_internet_gateway[0]","actions":["create"]}
+{"address":"module.vpc.aws_route_table.public[0]","actions":["create"]}
+{"address":"module.vpc.aws_route_table_association.public[0]","actions":["create"]}
+{"address":"module.vpc.aws_route_table_association.public[1]","actions":["create"]}
+{"address":"module.vpc.aws_subnet.public[0]","actions":["create"]}
+{"address":"module.vpc.aws_subnet.public[1]","actions":["create"]}
+{"address":"module.vpc.aws_vpc.this[0]","actions":["create"]}
+{"address":"module.web_server.aws_instance.server[\"api\"]","actions":["create"]}
+{"address":"module.web_server.aws_instance.server[\"web\"]","actions":["create"]}
+{"address":"module.web_server.aws_security_group.web","actions":["create"]}

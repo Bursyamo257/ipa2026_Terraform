@@ -1,0 +1,52 @@
+module.web_server.data.aws_ami.amazon_linux: Reading...
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0285259d22388ae68]
+module.web_server.data.aws_ami.amazon_linux: Read complete after 3s [id=ami-07c1b6f58fb89ce9f]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-095fd87711186ff57]
+module.web_server.aws_security_group.web: Refreshing state... [id=sg-013dace3ae92a75d4]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0a58afa60b04dced3]
+module.web_server.aws_instance.server["web"]: Refreshing state... [id=i-0342c76a184f75c86]
+module.web_server.aws_instance.server["api"]: Refreshing state... [id=i-0ebaeaa32e651317b]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # module.web_server.aws_instance.server["web"] will be updated in-place
+  ~ resource "aws_instance" "server" {
+        id                                   = "i-0342c76a184f75c86"
+      ~ tags                                 = {
+            "Environment"  = "dev"
+            "ManagedBy"    = "Terraform"
+          - "ManualChange" = "true" -> null
+            "Name"         = "ipa-lab04-dev-web"
+            "Owner"        = "IPA-Student-Lab4"
+            "Project"      = "ipa-lab04"
+            "Role"         = "frontend"
+        }
+      ~ tags_all                             = {
+          - "ManualChange" = "true" -> null
+            # (7 unchanged elements hidden)
+        }
+        # (39 unchanged attributes hidden)
+
+        # (8 unchanged blocks hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
+
+Warning: Resource targeting is in effect
+
+You are creating a plan with the -target option, which means that the result
+of this plan may not represent all of the changes requested by the current
+configuration.
+
+The -target option is not for routine use, and is provided only for
+exceptional situations such as recovering from errors or mistakes, or when
+Terraform specifically suggests to use it as part of an error message.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

@@ -1,0 +1,9 @@
+["check_results","lineage","outputs","resources","serial","terraform_version","version"]
+{
+  "version": 4,
+  "terraform_version": "1.16.3",
+  "serial": 64,
+  "lineage": "df663a48-d7f0-5346-f391-d8f81fb3ed09"
+}
+resources: 13
+instances total: 16
